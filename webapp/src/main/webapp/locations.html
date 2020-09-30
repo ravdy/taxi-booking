@@ -43,11 +43,11 @@
                     <nav class="main-nav">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li class="active"><a href="services.html">Services</a></li>
+                            <li><a href="services.html">Services</a></li>
                             <li><a href="drivers.html">Drivers</a></li>
                             <li><a href="cars.html">Cars</a></li>
                             <li><a href="garage.html">Garage</a></li>
-                            <li><a href="locations.html">Locations</a></li>
+                            <li class="active"><a href="locations.html">Locations</a></li>
                             <li><a href="#!">Pages</a>
                                 <ul>
                                     <li><a href="about.html">About</a></li>
@@ -89,81 +89,150 @@
 		<!-- Content start -->
 		<div class="content">
 
+			<!-- Locations map start -->
+			<div class="map" id="locations-map">
+			</div>
+			<!--Locations map end -->
+
 			<!-- Main start -->
 			<section class="intro">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="title">
-								<h1>Services</h1>
-								<h6>How can we help you</h6>
+								<h1>Locations</h1>
+								<h6>Check where you can find us</h6>
 							</div>
 							<p class="text-center"><big>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget porttitor massa. Nullam elit turpis, eleifend sit amet felis quis, auctor tempus felis. Vivamus tristique felis est, a scelerisque magna egestas at. Donec ultricies porta ante, vitae rhoncus purus ullamcorper vel. Ut mattis aliquam purus, ac sollicitudin elit porta quis. Aliquam fermentum, nibh scelerisque rutrum ultricies, felis elit commodo nisl, a lacinia dui odio vel velit. Curabitur vitae enim ullamcorper, rutrum dolor eu, pharetra odio.</big></p>
 							<hr class="blank">
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-road-pin icon-circle icon-big"></i></p>
-							<h6>Local routes</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
+					<form class="booking-form">
+						<div class="row">
+							<div class="col-xs-6 col-sm-2">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="econo" />
+									<label for="econo"><i class="icon-car-econo"></i>Econo</label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="classic" />
+									<label for="classic"><i class="icon-car-classic"></i>Classic</label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="wagon" />
+									<label for="wagon"><i class="icon-car-wagon"></i>Wagon</label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="minivan" />
+									<label for="minivan"><i class="icon-car-minivan"></i>Minivan</label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="suv" />
+									<label for="suv"><i class="icon-car-suv"></i>SUV</label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="limousine" />
+									<label for="limousine"><i class="icon-car-limo"></i>Limousine</label>
+								</fieldset>
+							</div>
 						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-airplane-1 icon-circle icon-big"></i></p>
-							<h6>Airport pickups</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
+						<div class="row">
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="name" placeholder="Name" />
+								</fieldset>
+								<fieldset>
+									<input type="email" name="email" placeholder="Email" />
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="from" placeholder="From" />
+								</fieldset>
+								<fieldset>
+									<input type="text" name="to" placeholder="To" />
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="date" placeholder="Date" class="datepicker" />
+								</fieldset>
+								<fieldset>
+									<input type="text" name="time" placeholder="Time" class="timepicker" />
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<select name="cars">
+										<option>Cars</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+									</select>
+								</fieldset>
+								<fieldset>
+									<select name="passengers">
+										<option>Passengers</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+										<option>11</option>
+										<option>12</option>
+										<option>13</option>
+										<option>14</option>
+										<option>15</option>
+										<option>16</option>
+									</select>
+								</fieldset>
+							</div>
 						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-business-man-3 icon-circle icon-big"></i></p>
-							<h6>Business trips</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
+						<div class="row">
+							<div class="col-sm-12">
+								<fieldset>
+									<textarea name="message" placeholder="Message"></textarea>
+								</fieldset>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-car-four-wheel icon-circle icon-big"></i></p>
-							<h6>VIP taxi</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<button class="btn btn-primary">Book Now</button>
+							</div>
 						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-airplane-1 icon-circle icon-big"></i></p>
-							<h6>Shopping</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-truck-2 icon-circle icon-big"></i></p>
-							<h6>Truck taxi</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-					</div>
+					</form>
 				</div>
 			</section>
-			<!--Main end -->
-
-			<!-- Promo start -->
-			<section class="promo">
-				<img src="http://placehold.it/1600x1200" alt="" />
-				<div class="tint from-left"></div>
+			<!-- Booking end -->
+			
+			<!-- Promo phone start -->
+			<section class="promo-phone">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-5">
-							<hgroup>
-								<h3>Not an average taxi company</h3>
-								<h6>Why Choose us</h6>
-							</hgroup>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget porttitor massa. Nullam elit turpis, eleifend sit amet felis quis, auctor tempus felis. Vivamus tristique felis est, a scelerisque magna egestas at.</p>
-							<a href="about.html" class="btn btn-secondary">Read more about us</a>
+						<div class="col-sm-12">
+							<div class="promo-phone-subtitle">Call us 24/7</div>
+							<div class="promo-phone-title">1-800-200-300</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!--Promo end -->
+			<!-- Promo phone end -->
 
 		</div>
 		<!-- Content end -->

@@ -43,7 +43,7 @@
                     <nav class="main-nav">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li class="active"><a href="services.html">Services</a></li>
+                            <li><a href="services.html">Services</a></li>
                             <li><a href="drivers.html">Drivers</a></li>
                             <li><a href="cars.html">Cars</a></li>
                             <li><a href="garage.html">Garage</a></li>
@@ -54,7 +54,7 @@
                                     <li><a href="testimonials.html">Testimonials</a></li>
                                     <li><a href="jobs.html">Jobs</a></li>
                                     <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li class="active"><a href="contact.html">Contact</a></li>
                                     <li><a href="404.html">Error 404</a></li>
                                     <li><a href="#!">Third Level Nav</a>
                                         <ul>
@@ -89,81 +89,175 @@
 		<!-- Content start -->
 		<div class="content">
 
+			<!-- Contact map start -->
+			<div class="map" id="contact-map">
+			</div>
+			<!--Contact map end -->
+
 			<!-- Main start -->
 			<section class="intro">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="title">
-								<h1>Services</h1>
-								<h6>How can we help you</h6>
+								<h1>Contact</h1>
+								<h6>Say hello</h6>
 							</div>
-							<p class="text-center"><big>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget porttitor massa. Nullam elit turpis, eleifend sit amet felis quis, auctor tempus felis. Vivamus tristique felis est, a scelerisque magna egestas at. Donec ultricies porta ante, vitae rhoncus purus ullamcorper vel. Ut mattis aliquam purus, ac sollicitudin elit porta quis. Aliquam fermentum, nibh scelerisque rutrum ultricies, felis elit commodo nisl, a lacinia dui odio vel velit. Curabitur vitae enim ullamcorper, rutrum dolor eu, pharetra odio.</big></p>
+							<p class="text-center"><big>Taxi Grabber Ltd., 4603 Oakwood Avenue, New York, 10011</big></p>
 							<hr class="blank">
 						</div>
 					</div>
+					<form class="contact-form">
+						<div class="row">
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="name" placeholder="Name" />
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="number" name="phone" placeholder="Phone" />
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="email" name="email" placeholder="Email" />
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="date" placeholder="Date" class="datepicker" />
+								</fieldset>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<fieldset>
+									<textarea name="message" placeholder="Message"></textarea>
+								</fieldset>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<button class="btn btn-primary">Book Now</button>
+							</div>
+						</div>
+					</form>
 					<div class="row">
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-road-pin icon-circle icon-big"></i></p>
-							<h6>Local routes</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-airplane-1 icon-circle icon-big"></i></p>
-							<h6>Airport pickups</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-business-man-3 icon-circle icon-big"></i></p>
-							<h6>Business trips</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-car-four-wheel icon-circle icon-big"></i></p>
-							<h6>VIP taxi</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-airplane-1 icon-circle icon-big"></i></p>
-							<h6>Shopping</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
-						</div>
-						<div class="col-sm-4 text-center">
-							<p><i class="icon-truck-2 icon-circle icon-big"></i></p>
-							<h6>Truck taxi</h6>
-							<p>Donec ut urna imperdiet, rhoncus justo quis, bibendum libero. Sed suscipit diam lectus, faucibus condimentum nibh volutpat sed. Aliquam erat volutpat.</p>
-							<p>&nbsp;</p>
+						<div class="col-sm-12">
+							<hr class="blank">
+							<ul class="contacts inline four-columns">
+								<li>
+									<img src="http://placehold.it/150x150" alt="" />
+									<h6>Marie Strickland</h6>
+									<p>General Enquiries</p>
+									<p>1-800-400-300</p>
+									<p><a href="mailto:info@taxigrabber.biz">info@taxigrabber.biz</a></p>
+									<div class="hover">
+										<ul>
+											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
+											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<img src="http://placehold.it/150x150" alt="" />
+									<h6>Yvonne Thomas</h6>
+									<p>Jobs</p>
+									<p>1-800-400-300</p>
+									<p><a href="mailto:jobs@taxigrabber.biz">jobs@taxigrabber.biz</a></p>
+									<div class="hover">
+										<ul>
+											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
+											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<img src="http://placehold.it/150x150" alt="" />
+									<h6>Audrey Walton</h6>
+									<p>Garage</p>
+									<p>1-800-400-300</p>
+									<p><a href="mailto:garage@taxigrabber.biz">garage@taxigrabber.biz</a></p>
+									<div class="hover">
+										<ul>
+											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
+											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<img src="http://placehold.it/150x150" alt="" />
+									<h6>Marilyn Clark</h6>
+									<p>Marketing</p>
+									<p>1-800-400-300</p>
+									<p><a href="mailto:marketing@taxigrabber.biz">marketing@taxigrabber.biz</a></p>
+									<div class="hover">
+										<ul>
+											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
+											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!--Main end -->
-
-			<!-- Promo start -->
-			<section class="promo">
-				<img src="http://placehold.it/1600x1200" alt="" />
-				<div class="tint from-left"></div>
+			<!-- Main end -->
+			
+			<!-- Testimonials start -->
+			<section class="testimonials">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-5">
-							<hgroup>
-								<h3>Not an average taxi company</h3>
-								<h6>Why Choose us</h6>
-							</hgroup>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget porttitor massa. Nullam elit turpis, eleifend sit amet felis quis, auctor tempus felis. Vivamus tristique felis est, a scelerisque magna egestas at.</p>
-							<a href="about.html" class="btn btn-secondary">Read more about us</a>
+						<div class="col-sm-12">
+							<div class="title">
+								<h2>Testimonials</h2>
+								<h6>Customer reviews</h6>
+							</div>
+							<div class="owl-carousel">
+								<div>
+									<img src="http://placehold.it/120x120" alt="" class="person" />
+									<blockquote>
+										Taxi grabber is exactly what our business has been lacking. Great job, I will definitely be ordering again! Not able to tell you how happy I am with taxi grabber. If you aren’t sure, always go for taxi grabber.
+										<footer>Amanda Reacher, Global Investements</footer>
+									</blockquote>
+								</div>
+								<div>
+									<img src="http://placehold.it/120x120" alt="" class="person" />
+									<blockquote>
+										Taxi Grabber is the most valuable business resource we have EVER purchased. I couldn't have asked for more than this. After using Taxi Grabber my business skyrocketed!
+										<footer>Robert Bartlett, Buena Vista Garden Maintenance</footer>
+									</blockquote>
+								</div>
+								<div>
+									<img src="http://placehold.it/120x120" alt="" class="person" />
+									<blockquote>
+										Keep up the excellent work. I would like to personally thank you for your outstanding product. I strongly recommend Taxi Grabber to everyone interested in running a successful business! Not able to tell you how happy I am with Taxi Grabber.
+										<footer>Dolores Garza, Audio Aid</footer>
+									</blockquote>
+								</div>
+								<div>
+									<img src="http://placehold.it/120x120" alt="" class="person" />
+									<blockquote>
+										Taxi Grabber is the next killer theme. This is simply unbelievable! Man, this thing is getting better and better as I learn more about it. Taxi Grabber is exactly what our business has been lacking.
+										<footer>Louis Rush, Access Asia</footer>
+									</blockquote>
+								</div>
+								<div>
+									<img src="http://placehold.it/120x120" alt="" class="person" />
+									<blockquote>
+										Definitely worth the investment. I wish I would have thought of it first. Taxi Grabber impressed me on multiple levels.
+										<footer>Florence Schilling, Sunburst Garden Management</footer>
+									</blockquote>
+								</div>
+							</div>
+							<a href="testimonials.html" class="btn btn-secondary">Read all testimonials</a>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!--Promo end -->
+			<!-- Testimonials end -->
 
 		</div>
 		<!-- Content end -->
