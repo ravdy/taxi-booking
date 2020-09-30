@@ -1,0 +1,3206 @@
+// Variables
+// =============================================================
+
+// Fonts
+@font-body:					"Roboto", sans-serif;
+@font-heading:				"Oswald", sans-serif;
+
+// Colors
+@color-white:				#fff;
+@color-black:				#000;
+@color-gray:				#888;
+@color-gray-light:			#e4e4e4;
+@color-gray-lighter:		#f5f5f5;
+@color-brand:				#ffce00;
+
+// Body
+@background-body:			@color-white;
+@color-body:				@color-gray;
+
+// Headings
+@color-heading:				@color-black;
+
+// Links
+@color-link:				@color-brand;
+@color-link-hover:			darken(@color-link, 5%);
+
+// Buttons
+@button-primary:			@color-brand;
+@button-primary-hover:		darken(@button-primary, 5%);
+@button-secondary:			@color-black;
+@button-secondary-hover:	lighten(@button-secondary, 10%);
+@button-default:			@color-white;
+@button-default-hover:		darken(@button-default, 5%);
+
+// Borders
+@color-border:				@color-gray-light;
+
+// Paddings
+@padding-default:			1em 1.5em;
+@padding-small:				0.5em 0.75em;
+@padding-large:				1.5em 2.75em;
+@padding-section:			8em 0;
+
+// Border radius
+@radius-default:			3px;
+@radius-small:				2px;
+@radius-large:				4px;
+
+// Transition time
+@transition-time:			0.3s;
+.transition {
+	transition:				all @transition-time ease;
+	-moz-transition:		all @transition-time ease;
+	-webkit-transition:		all @transition-time ease;
+	-o-transition:			all @transition-time ease;
+}
+
+// TranslateX
+.translateX {
+	transform:				translateX(-50%);
+	-moz-transform:			translateX(-50%);
+	-webkit-transform:		translateX(-50%);
+	-o-transform:			translateX(-50%);
+}
+
+// TranslateY
+.translateY {
+	transform:				translateY(-50%);
+	-moz-transform:			translateY(-50%);
+	-webkit-transform:		translateY(-50%);
+	-o-transform:			translateY(-50%);
+}
+
+// Rotate
+.rotate {
+	transform:				rotate(180deg);
+	-moz-transform:			rotate(180deg);
+	-webkit-transform:		rotate(180deg);
+	-o-transform:			rotate(180deg);
+}
+
+// Horizontal rules
+@hr-blank-border:			0;
+@hr-blank-margin:			0 0 3em;
+@hr-thin-border:			1px solid @color-border;
+@hr-thin-margin:			3em 0 4em;
+@hr-thick-border:			5px solid lighten(@color-border, 5%);
+@hr-thick-margin:			4em 0 5em;
+
+// Clear
+.clear {
+	clear:					both;
+	content:				"";
+	display:				table;
+	width:					100%;
+}
+
+// grayscale
+.grayscale {
+	-webkit-filter:			grayscale(100%);
+	-moz-filter:			grayscale(100%);
+	-ms-filter:				grayscale(100%);
+	-o-filter:				grayscale(100%);
+	filter:					gray;
+}
+
+/* Stylesheet imports
+===============================================================*/
+
+@import "bootstrap.css";
+@import "ionicons.css";
+@import "icomoon.css";
+@import "owl.carousel.css";
+@import "uber-google-maps.css";
+@import url(https://fonts.googleapis.com/css?family=Oswald:700|Roboto:300,300i,400,700);
+
+/*===============================================================
+
+Table of content:
+
+1. Global styles
+	1.1. Body
+	1.2. Headings
+	1.3. Links
+	1.4. Buttons
+	1.5. Sections
+	1.6. Horizontal rules
+	1.7. Address, phone, email
+	1.8. Lists
+	1.9. Images
+	1.10. Paragraphs
+	1.11. Forms
+	1.12. Text aligning
+	1.13. Tables
+	1.14. Quotes
+	1.15. Patterns
+
+2. Header
+	2.1. Logo
+	2.2. Navigation
+	2.3. Phone numbers
+	2.4. Social links
+
+3. Slider
+
+4. Content
+	4.1. Titles
+	4.2. Services
+	4.3. Price table
+	4.4. Testimonials
+		4.4.1. Testimonials carousel
+		4.4.2. Testimonials list
+	4.5. Booking form
+	4.6. Info boxes
+	4.7. Carousels
+	4.8. Date & time picker
+	4.9. Highlights
+	4.10. Promo
+	4.11. Icons
+	4.12. Drivers
+	4.13. Cars
+	4.14. Mechanics
+	4.15. Contacts
+	4.16. Promo phone
+	4.17. Pagination
+	4.18. Jobs
+	4.19. Blog
+		4.19.1. All posts
+		4.19.2. Posts list
+		4.19.3. Post comments
+
+5. Footer
+	5.1. Widgets
+	5.2. Credits
+
+6. Media queries
+	6.1. Desktops & laptops
+	6.2. Tablets
+		6.2.1. Header
+		6.2.2. Maps
+		6.2.3. Drivers, Mechanics & Contacts
+		6.2.4. Services
+		6.2.5. Testimonials
+	6.3. Phones
+		6.3.1. Header
+			6.3.1.1. Top bar
+			6.3.1.2. Navigation
+		6.3.2. Slider
+		6.3.3. Testimonials
+		6.3.4. Footer
+		6.3.5. Highlights
+		6.3.6. Promo
+		6.3.7. Promo phone
+		6.3.8. Maps
+		6.3.9. Jobs
+		6.3.10. Blog
+		6.3.11. Lists
+
+===============================================================*/
+
+/* 1. Global styles
+===============================================================*/
+
+	/* 1.1. Body
+	-----------------------------------------------------------*/
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		background: @background-body;
+		color: @color-body;
+		font-family: @font-body;
+		font-size: 16px;
+		line-height: 1.75em;
+		margin: 0;
+		min-width: 320px;
+		overflow-x: hidden;
+		padding-top: 120px;
+	}
+
+	::selection {
+		background: lighten(@color-brand, 30%);
+	}
+
+	::-moz-selection {
+		background: lighten(@color-brand, 30%);
+	}
+
+	.show-mobile {
+		display: none;
+	}
+
+	/* 1.2. Headings
+	-----------------------------------------------------------*/
+
+	h1, h2, h3, h4, h5, h6 {
+		color: @color-heading;
+		font-family: @font-heading;
+		font-weight: bold;
+		margin: 0 0 1em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		font-size: 3em;
+		line-height: 1em;
+	}
+
+	h2 {
+		font-size: 2.25em;
+		line-height: 1.1em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		line-height: 1.25em;
+	}
+
+	h4 {
+		font-size: 1.25em;
+		line-height: 1.5em;
+	}
+
+	h5 {
+		font-size: 1.1em;
+		line-height: 1.6em;
+	}
+
+	h6 {
+		font-size: 1em;
+		line-height: 1.75em;
+	}
+
+	hgroup {
+		margin: 0 0 1em;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+		}
+
+		h6 {
+			color: @color-brand;
+		}
+
+	}
+
+	/* 1.3. Links
+	-----------------------------------------------------------*/
+
+	a {
+		&:link,
+		&:focus,
+		&:visited {
+			color: @color-link;
+			text-decoration: none;
+			.transition;
+		}
+
+		&:hover {
+			color: @color-link-hover;
+		}
+	}
+
+	/* 1.4. Buttons
+	-----------------------------------------------------------*/
+
+	.btn {
+		border-radius: @radius-default;
+		cursor: pointer;
+		display: inline-block;
+		font-family: @font-heading;
+		font-size: 1em;
+		line-height: 1;
+		padding: @padding-default;
+		text-transform: uppercase;
+		.transition;
+
+		&.btn-default {
+			background: @button-default;
+			border: 1px solid @color-border;
+			color: @color-black;
+
+			&:hover {
+				background: @button-default-hover;
+			}
+
+		}
+
+		&.btn-primary {
+			background: @button-primary;
+			border: @button-primary;
+			color: @color-black;
+
+			&:hover {
+				background: @button-primary-hover;
+				border: @button-primary-hover;
+			}
+
+		}
+
+		&.btn-secondary {
+			background: @button-secondary;
+			border: @button-secondary;
+			color: @color-white;
+
+			&:hover {
+				background: @button-secondary-hover;
+				border: @button-secondary-hover;
+			}
+
+		}
+
+		&.btn-small {
+			border-radius: @radius-small;
+			padding: @padding-small;
+		}
+
+		&.btn-large {
+			border-radius: @radius-large;
+			padding: @padding-large;
+		}
+
+	}
+
+	/* 1.5. Sections
+	-----------------------------------------------------------*/
+
+	section {
+		padding: 80px 0;
+
+		&.alt {
+			background: @color-gray-lighter;
+		}
+
+	}
+
+	/* 1.6. Horizontal rules
+	-----------------------------------------------------------*/
+
+	hr {
+		border: 0;
+		border-top: @hr-thin-border;
+		margin: @hr-thin-margin;
+
+		&.blank {
+			border-top: @hr-blank-border;
+			margin: @hr-blank-margin;
+		}
+
+		&.thick {
+			border-top: @hr-thick-border;
+			margin: @hr-thick-margin;
+		}
+
+	}
+
+	/* 1.7. Address, phone, email
+	-----------------------------------------------------------*/
+
+	/* 1.8. Lists
+	-----------------------------------------------------------*/
+
+	ul {
+		list-style: none;
+		margin: 0 0 1em;
+		padding: 0;
+
+		li {
+			padding: 0 0 0 1em;
+			position: relative;
+
+			&:before {
+				font-family: "ionicons";
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+		}
+
+		&.inline {
+			margin: 0 -15px;
+
+			&:after,
+			&:before {
+				.clear;
+			}
+
+			li {
+				float: left;
+				padding: 30px 15px;
+			}
+
+			&.one-column li {
+				width: 100%;
+			}
+
+			&.two-columns li {
+				width: 50%;
+			}
+
+			&.three-columns li {
+				width: 33.3333%;
+			}
+
+			&.four-columns li {
+				width: 25%;
+			}
+
+			&.five-columns li {
+				width: 20%;
+			}
+
+			&.six-columns li {
+				width: 16.6666%;
+			}
+
+		}
+
+	}
+
+	ol {}
+
+	/* 1.9. Images
+	-----------------------------------------------------------*/
+
+	img {
+		display: inline-block;
+		height: auto;
+		max-width: 100%;
+
+		&.img-rounded {
+			border-radius: @radius-default;
+		}
+
+	}
+
+	/* 1.10. Paragraphs
+	-----------------------------------------------------------*/
+
+	p {
+		margin: 0 0 1em;
+	}
+
+	big {
+		font-size: 1.5em;
+		font-weight: 300;
+		line-height: 1.73em;
+	}
+
+	/* 1.11. Forms
+	-----------------------------------------------------------*/
+
+	form {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	fieldset {
+		border: 0;
+		margin: 0 0 30px;
+		padding: 0;
+	}
+
+	label {
+		display: block;
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=date],
+	input[type=time],
+	input[type=number],
+	input[type=file],
+	input[type=url],
+	select,
+	textarea {
+		background: @color-gray-lighter;
+		border: 0;
+		border-radius: @radius-default;
+		color: @color-gray;
+		display: block;
+		font-family: @font-body;
+		height: 4em;
+		padding: 0 1em;
+		width: 100%;
+
+		&:focus {
+			outline: @color-brand auto 5px;
+		}
+
+	}
+
+	textarea {
+		line-height: 1.75em;
+		height: 150px;
+		padding: 1em;
+	}
+
+	input[type=file] {
+		padding: 1em;
+	}
+
+	/* 1.12. Text aligning
+	-----------------------------------------------------------*/
+
+	.text-left {
+		text-align: left;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.text-right {
+		text-align: right;
+	}
+
+	/* 1.13. Tables
+	-----------------------------------------------------------*/
+
+	table {
+		margin-bottom: 2em;
+		width: 100%;
+	}
+
+	th, td {
+		border-bottom: 1px solid @color-border;
+		padding: 1em;
+	}
+
+	th {
+		color: @color-black;
+		font-family: @font-heading;
+		text-align: left;
+		text-transform: uppercase;
+	}
+
+	thead {
+		th, td {
+			border-width: 3px;
+		}
+	}
+
+	.responsive-table {
+		margin-bottom: 2em;
+		overflow-x: auto;
+		width: 100%;
+
+		table {
+			margin: 0;
+		}
+
+	}
+
+	/* 1.14. Quotes
+	-----------------------------------------------------------*/
+
+	blockquote,
+	q {
+		border: 0;
+		font-size: 1.25em;
+		font-style: italic;
+		font-weight: 200;
+		line-height: 2em;
+		margin: 0 0 2em;
+		padding: 0 0 0 3em;
+		position: relative;
+
+		&:before {
+			color: @color-brand;
+			content: "\f347";
+			font-family: "ionicons";
+			font-size: 2em;
+			left: 0;
+			position: absolute;
+			top: 0;
+		}
+
+		footer {
+			color: @color-black;
+			font-style: normal;
+
+			&:before {
+				background: @color-black;
+				content: "";
+				display: inline-block;
+				height: 1px;
+				margin-right: 0.5em;
+				position: relative;
+				top: -0.3333em;
+				width: 1em;
+			}
+
+		}
+
+	}
+
+	/* 1.15. Patterns
+	-----------------------------------------------------------*/
+
+	.pattern {
+		display: block;
+		height: 20px;
+		overflow: hidden;
+
+		#header-pattern rect,
+		#footer-pattern rect {
+			stroke: none;
+			fill: #fff;
+		}
+
+		#header-mask rect {
+			stroke: none;
+			fill: url(#header-pattern);
+		}
+
+		#footer-mask rect {
+			stroke: none;
+			fill: url(#footer-pattern);
+		}
+
+		#header-image {
+			stroke: none;
+			fill: @color-brand;
+			mask: url(#header-mask);
+		}
+
+		#footer-image {
+			stroke: none;
+			fill: @color-black;
+			mask: url(#footer-mask);
+		}
+
+	}
+
+/* 2. Header
+===============================================================*/
+
+.header {
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+
+	.top-bar {
+		background: @color-black;
+		color: @color-white;
+	}
+
+	.nav-bar {
+		background: @color-brand;
+	}
+
+}
+
+	/* 2.1. Logo
+	-----------------------------------------------------------*/
+
+	.logo {
+		float: left;
+		height: 80px;
+		position: relative;
+
+		img {
+			height: 55px;
+			left: 0;
+			max-height: 60px;
+			max-width: 240px;
+			position: absolute;
+			top: 50%;
+			width: 107px;
+			.translateY;
+		}
+
+	}
+
+	/* 2.2. Navigation
+	-----------------------------------------------------------*/
+
+	.nav-trigger {
+		display: none;
+	}
+
+	.main-nav {
+		float: right;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				float: left;
+				margin: 0 0 0 30px;
+				padding: 0;
+				position: relative;
+
+				&:before {
+					display: none;
+				}
+
+				a,
+				a:link,
+				a:focus,
+				a:visited {
+					color: @color-black;
+					display: block;
+					font-family: @font-heading;
+					line-height: 80px;
+					position: relative;
+					text-transform: uppercase;
+
+					&:before {
+						background: @color-white;
+						content: "";
+						display: block;
+						height: 2px;
+						left: 50%;
+						position: absolute;
+						top: 20px;
+						width: 0;
+						.translateX;
+						.transition;
+					}
+
+				}
+
+				a:hover {
+
+					&:before {
+						width: 100%;
+					}
+
+				}
+
+				&.active a {
+					color: @color-white;
+				}
+
+				&.parent > a span:before {
+					content: "\f104";
+					font-family: "ionicons";
+					font-weight: normal;
+					margin-left: 0.5em;
+				}
+
+				/* Nav Level 2 */
+
+				ul {
+					background: @color-black;
+					left: 0;
+					opacity: 0;
+					position: absolute;
+					top: 100%;
+					visibility: hidden;
+					width: 180px;
+					z-index: 10;
+					.transition;
+
+					li {
+						float: none;
+						margin: 0;
+						padding: 0;
+
+						a,
+						a:link,
+						a:focus,
+						a:visited {
+							color: @color-white;
+							font-family: @font-body;
+							line-height: 1.75em;
+							padding: 0.5em 1em;
+							text-transform: none;
+
+							&:after,
+							&:before {
+								display: none;
+							}
+
+							&:hover {
+								color: @color-brand;
+							}
+
+						}
+
+						&.parent > a span:before {
+							content: "\f10a";
+						}
+
+						/* Nav Level 3 */
+
+						ul,
+						&:last-child ul {
+							left: 100%;
+							opacity: 0;
+							top: 20px;
+							visibility: hidden;
+						}
+
+						&:hover {
+
+							ul,
+							&:last-child ul {
+								opacity: 1;
+								top: 0;
+								visibility: visible;
+							}
+
+						}
+
+					}
+
+				}
+
+				&:hover {
+
+					ul {
+						opacity: 1;
+						visibility: visible;
+						top: 80%;
+					}
+
+				}
+
+				/* Last main nav child alignment */
+
+				&:last-child {
+
+					ul {
+						left: auto;
+						right: 0;
+
+						li {
+
+							ul {
+								left: auto;
+								right: 100%;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 2.3. Phone numbers
+	-----------------------------------------------------------*/
+
+	.phone-trigger {
+		display: none;
+	}
+
+	.phones {
+		float: right;
+		font-weight: bold;
+		margin: 0;
+
+		li {
+			float: left;
+			margin: 0 0 0 50px;
+			padding: 0;
+
+			a {
+				color: @color-white;
+				line-height: 40px;
+
+				&:before {
+					color: @color-white;
+					content: "\f2d2";
+					font-family: "ionicons";
+					margin-right: 0.5em;
+				}
+
+				span {
+					color: @color-brand;
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 2.4. Social links
+	-----------------------------------------------------------*/
+
+	.social-links {
+		float: left;
+		margin: 0;
+
+		li {
+			float: left;
+			margin: 0 10px 0 0;
+			padding: 0;
+
+			a {
+				display: block;
+				line-height: 40px;
+				overflow: hidden;
+				position: relative;
+				text-indent: -9999px;
+				width: 16px;
+
+				&:before {
+					content: "\f1fe";
+					font-family: "ionicons";
+					left: 0;
+					position: absolute;
+					text-align: center;
+					text-indent: 0;
+					top: 0;
+					width: 16px;
+				}
+
+				&[href*="facebook"]:before {
+					content: "\f231";
+				}
+
+				&[href*="twitter"]:before {
+					content: "\f243";
+				}
+
+				&[href*="linkedin"]:before {
+					content: "\f239";
+				}
+
+				&[href*="instagram"]:before {
+					content: "\f350";
+				}
+
+			}
+
+		}
+
+	}
+
+
+/* 3. Slider
+===============================================================*/
+
+.slider {
+	font-family: @font-heading;
+	overflow: hidden;
+	text-align: center;
+	text-transform: uppercase;
+
+	.slide {
+		padding: 10em 0;
+		position: relative;
+
+		&:before {
+			background: @color-black;
+			bottom: 0;
+			content: "";
+			display: block;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.slider-image {
+			left: 0;
+			min-height: 100%;
+			min-width: 1400px;
+			width: 100%;
+			height: auto;
+			opacity: 0.2;
+			position: absolute;
+			top: 50%;
+			.translateY;
+		}
+
+		.slider-subtitle,
+		.slider-title,
+		.slider-button {
+			line-height: 1.2em;
+			position: relative;
+			z-index: 1;
+		}
+
+		.slider-subtitle {
+			color: @color-white;
+			font-size: 3em;
+		}
+
+		.slider-title {
+			color: @color-brand;
+			font-size: 6em;
+		}
+
+		.slider-button {
+			margin-top: 1em;
+		}
+
+	}
+
+	.owl-prev,
+	.owl-next {
+		background: @color-black;
+		color: @color-white;
+		cursor: pointer;
+		display: block;
+		font-size: 2em;
+		height: 60px;
+		line-height: 56px;
+		margin-top: -30px;
+		opacity: 0.3;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		width: 60px;
+		.transition;
+
+		&:hover {
+			opacity: 1;
+		}
+
+	}
+
+	.owl-prev {
+		left: 0;
+	}
+
+	.owl-next {
+		right: 0;
+	}
+
+}
+
+/* 4. Content
+===============================================================*/
+
+	/* 4.1. Titles
+	-----------------------------------------------------------*/
+
+	.title {
+		margin-bottom: 4em;
+		padding-top: 1.5em;
+		position: relative;
+		text-align: center;
+
+		&:before {
+			background: @color-brand;
+			content: "";
+			display: block;
+			height: 5px;
+			left: 50%;
+			margin-left: -30px;
+			position: absolute;
+			top: 0;
+			width: 60px;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			line-height: 1.1em;
+			margin: 0;
+		}
+
+		h6 {
+			color: @color-brand;
+			margin: 0.5em 0 0;
+		}
+
+	}
+
+	/* 4.2. Services
+	-----------------------------------------------------------*/
+
+	.service {
+		padding: 0 0 30px 85px;
+		position: relative;
+
+		i {
+			border: 2px solid @color-brand;
+			border-radius: 50%;
+			color: @color-black;
+			display: block;
+			font-size: 1.75em;
+			height: 70px;
+			left: 0;
+			line-height: 66px;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: 70px;
+		}
+
+		strong {
+			color: @color-black;
+		}
+
+	}
+
+	/* 4.3. Price table
+	-----------------------------------------------------------*/
+
+	.price-table {
+		border-radius: @radius-default;
+		overflow: hidden;
+		text-align: center;
+
+		th, td {
+			background: @color-black;
+			border: 0;
+			border-left: 1px solid rgba(255, 255, 255, 0.1);
+			color: @color-white;
+			text-align: center;
+
+			&:first-child {
+				background: @color-brand;
+				border: 0;
+				color: @color-black;
+				text-align: left;
+			}
+
+		}
+
+		thead {
+
+			th {
+				font-size: 13px;
+				padding: 2em 1em;
+
+				i {
+					display: block;
+					font-size: 60px;
+					line-height: 25px;
+					overflow: hidden;
+				}
+
+			}
+
+		}
+
+		tbody {
+
+			tr:nth-child(odd) {
+
+				th {
+					background: lighten(@color-brand, 10%);
+				}
+
+				td {
+					background: lighten(@color-black, 10%);
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 4.4. Testimonials
+	-----------------------------------------------------------*/
+
+		/* 4.4.1. Testimonials carousel
+		-------------------------------------------------------*/
+
+		.testimonials {
+			background: @color-brand;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+
+			&:before {
+				background: url(http://placehold.it/1600x1200) fixed;
+				background-size: cover;
+				bottom: 0;
+				content: "";
+				left: 0;
+				opacity: 0.1;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transform: translateZ(-1px) scale(1.15);
+			}
+
+			.title {
+
+				&:before {
+					background: @color-white;
+				}
+
+				h6 {
+					color: @color-white;
+				}
+			}
+
+			.owl-carousel {
+				margin-bottom: 2em;
+
+				.owl-nav {
+
+					&.disabled {
+						display: none;
+					}
+					
+				}
+
+				.owl-item {
+
+					.person {
+						border: 2px solid @color-white;
+						border-radius: 50%;
+						display: block;
+						height: 100px;
+						margin: 0 auto;
+						width: 100px;
+					}
+
+					blockquote {
+						color: @color-black;
+						font-size: 1.5em;
+						font-style: italic;
+						font-weight: 300;
+						line-height: 1.75em;
+						margin: 1em 10%;
+						padding: 0;
+
+						&:before {
+							display: none;
+						}
+
+						footer {
+							font-size: 0.6666em;
+							font-style: normal;
+							font-weight: normal;
+							line-height: 1.75em;
+							margin-top: 1em;
+
+							&:before {
+								background: @color-black;
+								content: "";
+								display: inline-block;
+								height: 1px;
+								margin-right: 1em;
+								position: relative;
+								top: -0.3333em;
+								width: 20px;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		/* 4.4.2. Testimonials list
+		-------------------------------------------------------*/
+
+		.testimonials-list {
+
+			li {
+				margin-bottom: 4em;
+				min-height: 150px;
+				padding-left: 180px;
+				position: relative;
+
+				img {
+					border-radius: 50%;
+					height: 150px;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 150px;
+				}
+
+				blockquote {
+					margin: 0;
+					padding: 0;
+
+					&:before {
+						display: none;
+					}
+
+				}
+
+			}
+
+		}
+
+	/* 4.5. Booking form
+	-----------------------------------------------------------*/
+
+	.booking-form {
+
+		.car-type {
+			height: 100px;
+			position: relative;
+			width: 100%;
+
+			label {
+				background: @color-brand;
+				border-radius: @radius-default;
+				color: @color-black;
+				font-family: @font-heading;
+				font-size: 13px;
+				cursor: pointer;
+				height: 100px;
+				left: 0;
+				padding: 25px 0;
+				position: absolute;
+				text-align: center;
+				text-transform: uppercase;
+				top: 0;
+				width: 100%;
+
+				i {
+					display: block;
+					font-size: 60px;
+					line-height: 25px;
+					overflow: hidden;
+				}
+
+			}
+
+			input[type=checkbox] {
+				visibility: hidden;
+
+				&:checked + label {
+					background: @color-black;
+					color: @color-white;
+
+					i {
+						color: @color-brand;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 4.6. Info boxes
+	-----------------------------------------------------------*/
+
+	.info {
+		background: lighten(@color-brand, 40%);
+		border: 1px solid @color-brand;
+		border-radius: @radius-default;
+		margin-bottom: 2em;
+		padding: 1em;
+	}
+
+	/* 4.7. Carousels
+	-----------------------------------------------------------*/
+
+	.owl-carousel {
+
+		.owl-item {
+
+			img {
+				display: inline-block;
+				max-width: 100%;
+				width: auto;
+			}
+
+		}
+
+		.owl-dots {
+			text-align: center;
+
+			.owl-dot {
+				border: 2px solid @color-black;
+				border-radius: 50%;
+				display: inline-block;
+				height: 12px;
+				margin: 0 5px;
+				width: 12px;
+
+				&.active {
+					background: @color-black;
+				}
+				
+			}
+
+		}
+
+	}
+
+	/* 4.8. Date & time picker
+	-----------------------------------------------------------*/
+
+	.picker {
+		color: @color-white;
+		font-size: 1em;
+		line-height: 1;
+		position: absolute;
+		text-align: center;
+		z-index: 10000;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.picker__table {
+		margin: 0;
+
+		th,
+		td {
+			border: 0;
+			line-height: 3em;
+			padding: 0;
+			width: 14.2857%;
+		}
+
+		th {
+			background: @color-brand;
+			text-align: center;
+		}
+
+	}
+
+	.picker__header {
+		background: @color-brand;
+		border-radius: 3px 3px 0 0;
+		color: @color-black;
+		font-family: @font-heading;
+		line-height: 3em;
+		position: relative;
+		text-transform: uppercase;
+	}
+
+	.picker__month,
+	.picker__year {
+		display: inline-block;
+		margin: 0 5px;
+	}
+
+	.picker__nav--prev,
+	.picker__nav--next {
+		display: block;
+		padding: 0;
+		position: absolute;
+		padding: 0 1em;
+		top: 0;
+
+		&:before {
+			font-family: "ionicons";
+		}
+	}
+
+	.picker__nav--prev {
+		left: 0;
+
+		&:before {
+			content: "\f107";
+		}
+
+	}
+
+	.picker__nav--next {
+		right: 0;
+
+		&:before {
+			content: "\f10a";
+		}
+
+	}
+
+	.picker__input {
+		cursor: default;
+	}
+
+	.picker__holder {
+		overflow-y: auto;
+		position: fixed;
+		transition: background .15s ease-out, transform 0s .15s;
+		width: 100%;
+		-webkit-overflow-scrolling: touch;
+		-webkit-backface-visibility: hidden;
+	}
+
+	.picker__frame,
+	.picker__holder {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transform: translateY(100%);
+	}
+
+	.picker__frame {
+		margin: 0 auto;
+		min-width: 280px;
+		max-width: 500px;
+		opacity: 0;
+		position: absolute;
+		transition:all .15s ease-out;
+		width: 100%;
+	}
+
+	.picker__wrap {
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
+
+	.picker__box {
+		background: @color-black;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.picker--opened {
+
+		.picker__holder {
+			background: rgba(0,0,0,.75);
+			transform: translateY(0);
+			transition: background .15s ease-out;
+			zoom: 1;
+		}
+
+		.picker__frame {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+	}
+
+	.picker__day {
+		cursor: pointer;
+
+		&:hover {
+			color: @color-brand;
+		}
+
+	}
+
+	.picker__day--today {
+		border: 1px solid @color-brand;
+	}
+
+	.picker__day--selected {
+		background: @color-brand;
+		border: 1px solid @color-brand;
+		color: @color-black;
+
+		&:hover {
+			color: @color-black;
+		}
+
+	}
+
+	.picker__day--outfocus {
+		color: #666;
+	}
+
+	.picker__day--disabled {
+		color: #444;
+		cursor: not-allowed;
+
+		&:hover {
+			color: #444;
+		}
+	}
+
+	.picker__list {
+		margin: 0;
+
+		li {
+			border-bottom: 1px solid #333;
+			cursor: pointer;
+			padding: 1em;
+
+			b {
+				font-size: 1.5em;
+			}
+
+			&:hover {
+				color: @color-brand;
+			}
+
+			&.picker__list-item--selected {
+				background: @color-brand;
+				color: @color-black;
+
+				&:hover {
+					color: @color-black;
+				}
+			}
+
+		}
+
+	}
+
+	.picker__footer {
+		padding: 2em 1em;
+	}
+
+	.picker__button--clear,
+	.picker__button--today,
+	.picker__button--close {
+		background: @color-brand;
+		border: 0;
+		border-radius: @radius-default;
+		color: @color-black;
+		font-family: @font-heading;
+		line-height: 3em;
+		margin: 0 5px;
+		padding: 0 15px;
+		text-transform: uppercase;
+	}
+
+	@media (min-height: 33.875em) {
+
+		.picker__frame {
+			bottom: -100%;
+			max-height: 80%;
+			overflow: visible;
+			top: auto;
+		}
+
+		.picker__wrap {
+			display: block;
+		}
+
+		.picker__box {
+			border-radius: @radius-default;
+			box-shadow: 0 12px 36px 16px rgba(0,0,0,.24);
+			display: block;
+		}
+
+		.picker--opened {
+
+			.picker__frame {
+				bottom: auto;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+		}
+
+	}
+
+	@media (min-height: 40.125em) {
+
+		.picker__frame {
+			margin-bottom:7.5%;
+		}
+
+	}
+
+	/* 4.9. Highlights
+	-----------------------------------------------------------*/
+
+	.highlights {
+		padding-top: 0;
+
+		.container {
+
+			.flex-row {
+				display: flex;
+				flex-direction: row;
+
+				.flex-column {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin: 1em 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 4.10. Promo
+	-----------------------------------------------------------*/
+
+	.promo {
+		background: @color-brand;
+		color: @color-black;
+		overflow: hidden;
+		padding: 160px 0;
+		position: relative;
+
+		img {
+			left: 0;
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			.translateY;
+		}
+
+		.tint {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+
+			&.from-left {
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffce00+0,ffce00+100&1+0,1+33,0+100 */
+				background: -moz-linear-gradient(left,  rgba(255,206,0,1) 0%, rgba(255,206,0,1) 33%, rgba(255,206,0,0) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  rgba(255,206,0,1) 0%,rgba(255,206,0,1) 33%,rgba(255,206,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  rgba(255,206,0,1) 0%,rgba(255,206,0,1) 33%,rgba(255,206,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffce00', endColorstr='#00ffce00',GradientType=1 ); /* IE6-9 */
+			}
+
+			&.from-right {
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffce00+0,ffce00+100&0+0,1+66,1+100 */
+				background: -moz-linear-gradient(left,  rgba(255,206,0,0) 0%, rgba(255,206,0,1) 66%, rgba(255,206,0,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  rgba(255,206,0,0) 0%,rgba(255,206,0,1) 66%,rgba(255,206,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  rgba(255,206,0,0) 0%,rgba(255,206,0,1) 66%,rgba(255,206,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffce00', endColorstr='#ffce00',GradientType=1 ); /* IE6-9 */
+			}
+
+		}
+
+		hgroup {
+
+			h6 {
+				color: @color-white;
+			}
+
+		}
+
+	}
+
+	/* 4.11. Icons
+	-----------------------------------------------------------*/
+
+	.icon-circle {
+		border: 2px solid @color-brand;
+		border-radius: 50%;
+		color: @color-black;
+		display: inline-block;
+		font-size: 1.75em;
+		height: 70px;
+		line-height: 66px;
+		text-align: center;
+		width: 70px;
+
+		&.icon-big {
+			font-size: 2.5em;
+			height: 120px;
+			line-height: 116px;
+			width: 120px;
+		}
+
+	}
+
+	/* 4.12. Drivers
+	-----------------------------------------------------------*/
+
+	.drivers {
+		text-align: center;
+
+		li {
+			position: relative;
+
+			img {
+				border-radius: 50%;
+				height: 150px;
+				margin-bottom: 1em;
+				width: 150px;
+			}
+
+			h6,
+			p {
+				margin: 0;
+			}
+
+			i {
+				color: @color-brand;
+			}
+
+			.hover {
+				background: rgba(0, 0, 0, 0.7);
+				border-radius: 50%;
+				display: block;
+				height: 150px;
+				left: 50%;
+				margin-left: -75px;
+				opacity: 0;
+				position: absolute;
+				text-align: center;
+				top: 30px;
+				width: 150px;
+				.transition;
+
+				ul {
+					left: 0;
+					margin: 0;
+					position: absolute;
+					top: 50%;
+					width: 100%;
+					.translateY;
+
+					li {
+						display: inline;
+						float: none;
+						font-size: 2em;
+						margin: 0 0.2em;
+						padding: 0;
+						width: auto;
+					}
+
+				}
+
+			}
+
+			&:hover {
+
+				.hover {
+					opacity: 1;
+				}
+				
+			}
+
+		}
+
+	}
+
+	/* 4.13. Cars
+	-----------------------------------------------------------*/
+
+	.cars {
+		text-align: center;
+
+		li {
+
+			img {
+				border-radius: @radius-default;
+				margin-bottom: 1em;
+			}
+
+			h6,
+			p {
+				margin: 0;
+			}
+
+		}
+
+	}
+
+	/* 4.14. Mechanics
+	-----------------------------------------------------------*/
+
+	.mechanics {
+		text-align: center;
+
+		li {
+
+			img {
+				border-radius: 50%;
+				height: 150px;
+				margin-bottom: 1em;
+				width: 150px;
+			}
+
+			h6 {
+				margin: 0;
+			}
+
+			.hover {
+				background: rgba(0, 0, 0, 0.7);
+				border-radius: 50%;
+				display: block;
+				height: 150px;
+				left: 50%;
+				margin-left: -75px;
+				opacity: 0;
+				position: absolute;
+				text-align: center;
+				top: 30px;
+				width: 150px;
+				.transition;
+
+				ul {
+					left: 0;
+					margin: 0;
+					position: absolute;
+					top: 50%;
+					width: 100%;
+					.translateY;
+
+					li {
+						display: inline;
+						float: none;
+						font-size: 2em;
+						margin: 0 0.2em;
+						padding: 0;
+						width: auto;
+					}
+
+				}
+
+			}
+
+			&:hover {
+
+				.hover {
+					opacity: 1;
+				}
+				
+			}
+
+		}
+
+	}
+
+	/* 4.15. Contacts
+	-----------------------------------------------------------*/
+
+	.contacts {
+		text-align: center;
+
+		li {
+
+			img {
+				border-radius: 50%;
+				height: 150px;
+				margin-bottom: 1em;
+				width: 150px;
+			}
+
+			h6,
+			p {
+				margin: 0;
+			}
+
+			.hover {
+				background: rgba(0, 0, 0, 0.7);
+				border-radius: 50%;
+				display: block;
+				height: 150px;
+				left: 50%;
+				margin-left: -75px;
+				opacity: 0;
+				position: absolute;
+				text-align: center;
+				top: 30px;
+				width: 150px;
+				.transition;
+
+				ul {
+					left: 0;
+					margin: 0;
+					position: absolute;
+					top: 50%;
+					width: 100%;
+					.translateY;
+
+					li {
+						display: inline;
+						float: none;
+						font-size: 2em;
+						margin: 0 0.2em;
+						padding: 0;
+						width: auto;
+					}
+
+				}
+
+			}
+
+			&:hover {
+
+				.hover {
+					opacity: 1;
+				}
+				
+			}
+
+		}
+
+	}
+
+	/* 4.16. Promo phone
+	-----------------------------------------------------------*/
+
+	.promo-phone {
+		background: @color-black;
+		overflow: hidden;
+		padding: 160px 0;
+		position: relative;
+		text-align: center;
+
+		&:before {
+			background: url(http://placehold.it/1600x1200) fixed;
+			background-size: cover;
+			bottom: 0;
+			content: "";
+			left: 0;
+			opacity: 0.25;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: translateZ(-1px) scale(1.15);
+		}
+
+		.promo-phone-title {
+			color: @color-brand;
+			font-family: @font-heading;
+			font-size: 6em;
+			line-height: 1.2em;
+			text-transform: uppercase;
+		}
+
+		.promo-phone-subtitle {
+			color: @color-white;
+			font-family: @font-heading;
+			font-size: 3em;
+			line-height: 1.2em;
+			text-transform: uppercase;
+		}
+
+	}
+
+	/* 4.17. Pagination
+	-----------------------------------------------------------*/
+
+	.pagination {
+		text-align: center;
+
+		ul {
+
+			li {
+				display: inline-block;
+				padding: 0;
+
+				a,
+				span {
+					border: 1px solid @color-border;
+					border-radius: @radius-default;
+					display: inline-block;
+					height: 3em;
+					line-height: 3em;
+					margin: 0.25em;
+					padding: 0 1.25em;
+				}
+
+				a {
+					color: @color-body;
+
+					&:hover {
+						background: @color-gray-lighter;
+					}
+
+				}
+
+				span {
+					color: lighten(@color-body, 20%);
+					cursor: not-allowed;
+				}
+
+				&.active {
+
+					span {
+						background: @color-brand;
+						color: @color-white;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.paging {
+
+		ul {
+			margin: 3em 0 0;
+
+			&:after,
+			&:before {
+				.clear;
+			}
+
+			li {
+				padding: 0;
+
+				a,
+				span {
+					border: 1px solid @color-border;
+					border-radius: @radius-default;
+					display: block;
+					height: 3em;
+					line-height: 3em;
+					padding: 0 1em;
+				}
+
+				a {
+					color: @color-body;
+
+					&:hover {
+						background: @color-gray-lighter;
+					}
+
+				}
+
+				span {
+					color: lighten(@color-body, 20%);
+					cursor: not-allowed;
+				}
+
+				&:first-child {
+					float: left;
+
+					i {
+						margin-right: 0.5em
+					}
+
+				}
+
+				&:last-child {
+					float: right;
+
+					i {
+						margin-left: 0.5em
+					}
+					
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 4.18. Jobs
+	-----------------------------------------------------------*/
+
+	.job {
+		border-bottom: 1px solid @color-border;
+		margin-bottom: 3em;
+		padding-bottom: 2em;
+	}
+
+	.job-meta {
+		margin: 0 0 1em;
+
+		li {
+			display: inline;
+			font-weight: bold;
+			margin-right: 2em;
+			padding: 0;
+
+			&:before {
+				color: @color-brand;
+				font-family: "ionicons";
+				font-weight: normal;
+				margin-right: 0.5em;
+				position: relative;
+			}
+
+			&.job-type:before {
+				content: "\f26e";
+			}
+
+			&.job-salary:before {
+				content: "\f316";
+			}
+
+			&.job-closing:before {
+				content: "\f117";
+			}
+
+		}
+
+	}
+
+	/* 4.19. Blog
+	-----------------------------------------------------------*/
+
+		/* 4.19.1. All posts
+		-------------------------------------------------------*/
+
+		.post {
+
+			.post-thumb {
+				border-radius: @radius-default;
+				display: block;
+				margin-bottom: 1em;
+				overflow: hidden;
+				position: relative;
+
+				&:before {
+					background: @color-black;
+					bottom: 0;
+					content: "";
+					display: block;
+					left: 0;
+					opacity: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index: 1;
+					.transition;
+				}
+
+				&:after {
+					background: @color-brand;
+					border-radius: 50%;
+					color: @color-black;
+					content: "\f21f";
+					display: block;
+					font-family: "ionicons";
+					font-size: 2em;
+					height: 60px;
+					left: 50%;
+					line-height: 60px;
+					margin: -30px 0 0 -30px;
+					position: absolute;
+					text-align: center;
+					top: -30px;
+					width: 60px;
+					z-index: 2;
+					.transition;
+				}
+
+			}
+
+			.featured {
+				background: @color-brand;
+				color: @color-black;
+				display: block;
+				font-weight: bold;
+				left: 15px;
+				padding: 0.25em 1em;
+				position: absolute;
+				top: 30px;
+				z-index: 3;
+			}
+
+			.post-title {
+				margin: 0;
+
+				a {
+					color: @color-black
+				}
+
+			}
+
+			.post-meta {
+				color: @color-brand;
+				font-family: @font-heading;
+				margin-bottom: 1em;
+				text-transform: uppercase;
+			}
+
+			img {
+				border-radius: @radius-default;
+
+				&.align-left {
+					float: left;
+					margin: 5px 30px 15px 0;
+					max-width: 45%;
+				}
+
+				&.align-right {
+					float: right;
+					margin: 5px 0 15px 30px;
+					max-width: 45%;
+				}
+
+			}
+
+			&:hover {
+
+				.post-thumb {
+
+					&:before {
+						opacity: 0.5;
+					}
+
+					&:after {
+						top: 50%;
+					}
+
+				}
+
+			}
+
+		}
+
+		/* 4.19.2. Posts list
+		-------------------------------------------------------*/
+
+		.posts-list {
+
+			.post {
+				float: left;
+				padding: 0 15px 80px 15px;
+				position: relative;
+				width: 50%;
+
+				&:first-child {
+					float: none;
+					font-size: 1.25em;
+					line-height: 1.75em;
+					width: 100%;
+				}
+
+				&:nth-child(2n+2) {
+					clear: left;
+				}
+
+			}
+
+		}
+
+		/* 4.19.3. Post comments
+		-------------------------------------------------------*/
+
+		.comments {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 3em 0 0;
+				padding: 0;
+				position: relative;
+
+				ol {
+					list-style: none;
+					margin: 0 0 0 110px;
+					padding: 0;
+
+					li ol li ol {
+						margin: 0;
+					}
+
+				}
+
+				.comment-thumb {
+					border-radius: 50%;
+					height: 80px;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 80px;
+				}
+
+				.comment-meta {
+					color: @color-black;
+					font-weight: bold;
+					margin: 0 0 0.5em 110px;
+				}
+
+				.comment-body {
+					margin-left: 110px;
+				}
+
+			}
+
+		}
+
+/* 5. Footer
+===============================================================*/
+
+.footer {
+	margin-top: -20px;
+	position: relative;
+}
+
+	/* 5.1. Widgets
+	-----------------------------------------------------------*/
+
+	.widgets {
+		background: lighten(@color-black, 5%);
+		padding: 4em 0;
+
+		.widget {
+			padding: 2em 0;
+		}
+
+		h6 {
+			color: @color-white;
+		}
+
+		.quick-links {
+			padding: 0;
+
+			&:after,
+			&:before {
+				.clear;
+			}
+
+			li {
+				float: left;
+				padding: 0;
+				width: 50%;
+
+				a {
+					display: block;
+					padding-left: 1em;
+					position: relative;
+
+					&:before {
+						color: @color-white;
+						content: "\f3d3";
+						font-family: "ionicons";
+						left: 0;
+						position: absolute;
+						top: 0;
+					}
+
+				}
+
+			}
+
+		}
+
+		.contact {
+			margin: 0;
+			padding: 0;
+
+			li {
+				padding-left: 1.5em;
+				position: relative;
+
+				&:before {
+					color: @color-white;
+					font-family: "ionicons";
+					left: 0;
+					position: absolute;
+					top: 0;
+				}
+
+				&.hotline:before {
+					content: "\f140";
+				}
+
+				&.phone:before {
+					content: "\f2d2";
+				}
+
+				&.email:before {
+					content: "\f2eb";
+				}
+
+				&.address:before {
+					content: "\f3a3";
+				}
+
+			}
+
+		}
+
+	}
+
+	/* 5.2. Credits
+	-----------------------------------------------------------*/
+
+	.credits {
+		background: @color-black;
+		padding: 2em 0;
+
+		.copyright {
+			float: left;
+			line-height: 40px;
+			margin: 0;
+		}
+
+		.social-links {
+			float: right;
+			margin: 0;
+
+			li {
+				float: left;
+				margin: 0 0 0 10px;
+				padding: 0;
+
+				a {
+					display: block;
+					overflow: hidden;
+					position: relative;
+					text-indent: -9999px;
+					width: 40px;
+
+					&:before {
+						border: 2px solid @color-white;
+						border-radius: 50%;
+						content: "\f1fe";
+						font-family: "ionicons";
+						font-size: 20px;
+						height: 40px;
+						left: 0;
+						line-height: 36px;
+						position: absolute;
+						text-align: center;
+						text-indent: 0;
+						top: 0;
+						width: 40px;
+					}
+
+					&[href*="facebook"]:before {
+						content: "\f231";
+					}
+
+					&[href*="twitter"]:before {
+						content: "\f243";
+					}
+
+					&[href*="linkedin"]:before {
+						content: "\f239";
+					}
+
+					&[href*="instagram"]:before {
+						content: "\f350";
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+/* 6. Media queries
+===============================================================*/
+
+	/* 6.1. Desktops & laptops
+	-----------------------------------------------------------*/
+
+	@media (min-width: 1200px) {
+
+	}
+
+	/* 6.2. Tablets
+	-----------------------------------------------------------*/
+
+	@media (max-width: 991px) {
+
+		big {
+			font-size: 1.25em;
+		}
+
+		blockquote,
+		q {
+			font-size: 1.1em;
+			line-height: 1.75em;
+		}
+
+		.show-mobile {
+			display: block;
+		}
+
+		/* 6.2.1. Header
+		-------------------------------------------------------*/
+
+		.phones li {
+			margin: 0 0 0 20px;
+		}
+
+		.main-nav ul li {
+			margin: 0 0 0 20px;
+		}
+
+		/* 6.2.2. Maps
+		-----------------------------------------------------------*/
+
+		.map {
+			height: 500px !important;
+		}
+
+		/* 6.2.3. Drivers, Mechanics & Contacts
+		-----------------------------------------------------------*/
+
+		.drivers,
+		.mechanics,
+		.contacts {
+
+			li {
+
+				.hover {
+					background: none;
+					border-radius: 0;
+					height: auto;
+					left: auto;
+					margin: 10px 0 0;
+					opacity: 1;
+					position: relative;
+					top: auto;
+					width: 100%;
+
+					ul {
+						left: auto;
+						position: relative;
+						top: auto;
+						transform: none;
+
+						li {
+							font-size: 1.5em;
+							margin: 5px 1px;
+
+							a {
+								border: 2px solid @color-brand;
+								border-radius: 50%;
+								display: inline-block;
+								height: 50px;
+								line-height: 50px;
+								width: 50px;
+
+								i {
+									color: @color-black;
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		/* 6.2.4. Services
+		-----------------------------------------------------------*/
+
+		.service {
+			padding: 0 0 30px 60px;
+
+			i {
+				font-size: 1.25em;
+				height: 50px;
+				line-height: 46px;
+				width: 50px;
+			}
+
+		}
+
+		/* 6.2.5. Testimonials
+		-------------------------------------------------------*/
+
+		.testimonials {
+
+			.owl-carousel {
+
+				.owl-item {
+
+					blockquote {
+						font-size: 1.25em;
+
+						footer {
+							font-size: 0.85em;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		.testimonials-list {
+
+			li {
+				padding-left: 75px;
+
+				img {
+					height: 60px;
+					width: 60px;
+				}
+
+			}
+
+		}
+
+		/* 6.2.6. Promo
+		-------------------------------------------------------*/
+
+		.promo {
+			padding: 80px 0;
+		}
+
+	}
+
+	@media (min-width: 768px) {
+
+		.phones,
+		.main-nav {
+			display: block !important;
+		}
+
+	}
+
+	/* 6.3. Phones
+	-----------------------------------------------------------*/
+
+	@media (max-width: 767px) {
+
+		body {
+			padding: 0;
+		}
+
+		big {
+			font-size: 1.1em;
+		}
+
+		/* 6.3.1. Header
+		-------------------------------------------------------*/
+
+		.header {
+			height: auto;
+			margin-bottom: -20px;
+			position: relative;
+
+			/* 6.3.1.1. Top bar
+			---------------------------------------------------*/
+
+			.social-links {
+				float: none;
+
+				&:after {
+					.clear;
+				}
+
+			}
+
+			.phone-trigger {
+				background: none;
+				border: none;
+				color: @color-brand;
+				display: block;
+				line-height: 40px;
+				padding: 0 15px;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+			.phones {
+				display: none;
+				float: none;
+				padding: 0 0 1em 0;
+
+				&:before,
+				&:after {
+					.clear;
+				}
+
+				li {
+					float: none;
+					margin: 0;
+
+					a {
+						display: block;
+					}
+
+				}
+
+			}
+
+			/* 6.3.1.2. Navigation
+			---------------------------------------------------*/
+
+			.logo {
+				display: block;
+				float: none;
+				height: auto;
+				max-width: 240px;
+				padding: 15px 0;
+
+				img {
+					left: auto;
+					top: auto;
+					position: relative;
+					transform: none;
+				}
+			}
+
+			.nav-trigger {
+				background: none;
+				border: none;
+				color: @color-black;
+				display: block;
+				font-size: 3em;
+				height: 85px;
+				padding: 0 15px;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+			.nav-bar {
+				height: auto;
+				position: relative;
+			}
+
+			.main-nav {
+				display: none;
+				float: none;
+				margin: 0 -15px;
+
+				&:before,
+				&:after {
+					.clear;
+				}
+
+				ul {
+
+					li {
+						float: none;
+						margin: 0;
+
+						a {
+							line-height: 1em;
+							padding: 15px;
+							position: relative;
+
+							&:before {
+								display: none;
+							}
+
+						}
+
+						&.parent > a {
+
+							span {
+
+								&:before {
+									display: block;
+									margin: 0;
+									padding: 15px;
+									position: absolute;
+									right: 0;
+									top: 0;
+									.transition;
+								}
+
+								&.rotate:before {
+									.rotate;
+								}
+
+							}
+
+						}
+
+						ul,
+						ul li ul {
+							background: darken(@color-brand, 2%);
+							display: none;
+							left: auto;
+							padding: 0 15px;
+							opacity: 1;
+							position: relative;
+							right: auto;
+							top: auto;
+							visibility: visible;
+							width: 100%;
+
+							li {
+
+								a {
+									color: @color-black;
+									position: relative;
+
+									&:before,
+									&:hover:before {
+										background: none;
+										color: @color-white;
+										content: "\f3d3";
+										display: block;
+										font-family: "ionicons";
+										height: auto;
+										left: 0;
+										position: absolute;
+										top: 0.45em;
+										width: auto;
+									}
+
+									&:hover {
+										color: @color-black;
+									}
+
+								}
+
+								&.parent > a {
+
+									span {
+
+										&:before {
+											content: "\f104";
+											padding: 0.5em 1em;
+											right: -1em;
+										}
+
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		/* 6.3.2. Slider
+		-------------------------------------------------------*/
+
+		.slider {
+
+			.slide {
+				padding: 5em 0;
+
+				.slider-title {
+					font-size: 3em;
+				}
+
+				.slider-subtitle {
+					font-size: 1.5em;
+				}
+
+			}
+
+			.owl-prev,
+			.owl-next {
+
+				&:hover {
+					opacity: 0.3;
+				}
+
+			}
+
+		}
+
+		/* 6.3.3. Testimonials
+		-------------------------------------------------------*/
+
+		.testimonials {
+
+			.owl-carousel {
+
+				.owl-item {
+
+					blockquote {
+						font-size: 1.1em;
+
+						footer {
+							font-size: 0.9em;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		/* 6.3.4. Footer
+		-------------------------------------------------------*/
+
+		.credits {
+
+			.copyright,
+			.social-links {
+				float: none;
+				text-align: center;
+			}
+
+			.social-links li {
+				display: inline-block;
+				float: none;
+				margin: 5px;
+			}
+
+		}
+
+		/* 6.3.5. Highlights
+		-----------------------------------------------------------*/
+
+		.highlights {
+
+			.container {
+
+				.flex-row {
+					display: block;
+					margin: 0;
+
+					.flex-column {
+						display: block;
+					}
+
+				}
+
+			}
+
+		}
+
+		/* 6.3.6. Promo
+		-----------------------------------------------------------*/
+
+		.promo {
+			padding: 80px 0;
+
+			img {
+				display: none;
+			}
+
+			.tint {
+				background: @color-brand;
+				opacity: 0.8;
+
+			}
+
+		}
+
+		/* 6.3.7. Promo phone
+		-----------------------------------------------------------*/
+
+		.promo-phone {
+			padding: 80px 0;
+
+			.promo-phone-title {
+				font-size: 3em;
+			}
+
+			.promo-phone-subtitle {
+				font-size: 1.5em;
+			}
+
+		}
+
+		/* 6.3.8. Maps
+		-----------------------------------------------------------*/
+
+		.map {
+			height: 300px !important;
+		}
+
+		/* 6.3.9. Jobs
+		-----------------------------------------------------------*/
+
+		.job {
+			margin-bottom: 2em;
+			padding-bottom: 2em;
+
+		}
+
+		.job-meta {
+
+			li {
+				display: block;
+			}
+
+		}
+
+		/* 6.3.10. Blog
+		-----------------------------------------------------------*/
+
+		.post {
+
+			img {
+
+				&.align-left,
+				&.align-right {
+					float: none;
+					margin: 0 0 1em;
+					max-width: 100%;
+				}
+
+			}
+
+		}
+
+		.posts-list {
+
+			.post {
+				float: none;
+				padding: 0 15px 40px 15px;
+				width: 100%;
+			}
+
+		}
+
+		.comments {
+
+			li {
+				margin: 3em 0 0;
+
+				ol {
+					list-style: none;
+					margin: 0 0 0 30px;
+					padding: 0;
+				}
+
+				.comment-thumb {
+					height: 50px;
+					width: 50px;
+				}
+
+				.comment-meta {
+					margin-left: 65px;
+				}
+
+				.comment-body {
+					margin-left: 0;
+				}
+
+			}
+
+		}
+
+		/* 6.3.11. Lists
+		-----------------------------------------------------------*/
+
+		ul {
+
+			&.inline {
+
+				li {
+					float: none;
+					padding: 30px 15px;
+				}
+
+				&.one-column li,
+				&.two-columns li,
+				&.three-columns li,
+				&.four-columns li,
+				&.five-columns li,
+				&.six-columns li {
+					width: 100%;
+				}
+
+			}
+
+		}
+
+	}
