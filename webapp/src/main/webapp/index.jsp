@@ -44,10 +44,10 @@
                         <ul>
                             <li class="active"><a href="index.html">Home</a></li>
                             <li><a href="services.html">Services</a></li>
-                    <!--    <li><a href="drivers.html">Drivers</a></li>
+                            <li><a href="drivers.html">Drivers</a></li>
                             <li><a href="cars.html">Cars</a></li>
                             <li><a href="garage.html">Garage</a></li>
-                            <li><a href="locations.html">Locations</a></li>
+                      <!--      <li><a href="locations.html">Locations</a></li>
                             <li><a href="#!">Pages</a>
                                 <ul>
                                     <li><a href="about.html">About</a></li>
