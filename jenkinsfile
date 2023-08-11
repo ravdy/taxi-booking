@@ -52,7 +52,7 @@ pipeline{
         artifacts: [
             [artifactId: 'maven-project',
              classifier: '',
-             file: 'target/taxi-booking-1.0.1.war',
+             file: 'taxi-booking/target/taxi-booking-1.0.1.war',
              type: 'war']
         ]
      )
