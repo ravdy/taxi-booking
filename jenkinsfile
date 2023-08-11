@@ -76,7 +76,7 @@ pipeline{
         steps{
             input  "waiting for manager approvel"
             sshagent(['tommy-remote']) {
-    ssh 'scp -o StrictHostKeyChecking=no taxi-booking/target/taxi-booking-1.0.1.war ubuntu@35.154.5.36:/var/lib/tomcat9/webapps'
+    sh 'scp -o StrictHostKeyChecking=no taxi-booking/target/taxi-booking-1.0.1.war ubuntu@35.154.5.36:/var/lib/tomcat9/webapps'
 }
         }
     }
