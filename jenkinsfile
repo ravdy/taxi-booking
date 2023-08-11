@@ -67,6 +67,11 @@ pipeline{
             sh 'docker build -t bharath0812/tomcat:2.0 .'
         }
     }
+    stage('docker image scan with trivy'){
+        steps{
+            sh 'trivy image bharath0812/tomcat:2.0'
+        }
+    }
     stage('docker image push to dockerhub'){
         steps{
             withDockerRegistry(credentialsId: 'docker-hub') {
