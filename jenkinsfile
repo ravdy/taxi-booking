@@ -41,6 +41,7 @@ pipeline{
           }
           stage('Deploy') {
       steps {
+        script{}
         nexusArtifactUploader(
           nexusVersion: 'nexus3',
           protocol: 'http',
@@ -50,13 +51,12 @@ pipeline{
           repository: 'taxi-webapp',
           credentialsId: 'nexus',
           artifacts: [
-            {
               artifactId: 'maven-project',
               type: 'war',
               file: 'target/taxi-booking-1.0.1.war'
-            }
           ]
         )
+      }
       }
     }
     }
