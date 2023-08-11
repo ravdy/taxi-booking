@@ -67,5 +67,18 @@ pipeline{
             sh 'cp taxi-booking/target/taxi-booking-1.0.1.war /var/lib/tomcat9/webapps'
         }
     }
+    stage('testing-application in qa'){
+        steps{
+            echo "testing done"
+        }
+    }
+    stage('deploy in production'){
+        input  "waiting for manager approvel"
+        steps{
+            sshagent(['tommy-remote']) {
+    ssh 'scp -o StrictHostKeyChecking=no taxi-booking/target/taxi-booking-1.0.1.war ubuntu@35.154.5.36:/var/lib/tomcat9/webapps'
+}
+        }
+    }
     }
     }
