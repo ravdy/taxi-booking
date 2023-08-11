@@ -62,21 +62,15 @@ pipeline{
      )
       }
     }
-    stage('deploy dev-server'){
+    stage('build docker image'){
         steps{
-            sh 'cp taxi-booking/target/taxi-booking-1.0.1.war /var/lib/tomcat9/webapps'
+            sh 'docker build -t bharath0812/tomcat:2.0 .'
         }
     }
-    stage('testing-application in qa'){
+    stage('docker image push to dockerhub'){
         steps{
-            echo "testing done"
-        }
-    }
-    stage('deploy in production'){
-        steps{
-            input  "waiting for manager approvel"
-            sshagent(['tommy-remote']) {
-    sh 'scp -o StrictHostKeyChecking=no taxi-booking/target/taxi-booking-1.0.1.war ubuntu@35.154.5.36:/var/lib/tomcat9/webapps'
+            withDockerRegistry(credentialsId: 'docker-hub') {
+    sh 'docker push bharath0812/tomcat:2.0'
 }
         }
     }
