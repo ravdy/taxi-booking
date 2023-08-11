@@ -3,6 +3,9 @@ pipeline{
     tools{
         maven 'maven'
     }
+      environment{
+        SCANNER_HOME= tool 'sonar'
+    }
     stages{
         stage('checkout-code'){
             steps{
@@ -21,7 +24,7 @@ pipeline{
         }
      stage('Sonarqube') {
             steps {
-                withSonarQubeEnv('sonar-server'){
+                withSonarQubeEnv('sonar'){
                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=taxi-webapp \
                    -Dsonar.java.binaries=. \
                    -Dsonar.projectKey=devops-test1234_taxi-webapp '''
