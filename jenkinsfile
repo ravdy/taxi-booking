@@ -3,6 +3,9 @@ pipeline{
     tools{
         maven 'maven'
     }
+     parameters {
+        booleanParam(name: 'skip_test', defaultValue: false, description: 'Set to true to skip the test stage')
+    }
       environment{
         SCANNER_HOME= tool 'sonar'
     }
@@ -40,6 +43,7 @@ pipeline{
             }
           }
           stage('Deploy') {
+            when { expression { params.skip_test != false } }
       steps {
            nexusArtifactUploader(
         nexusVersion: 'nexus3',
@@ -57,6 +61,11 @@ pipeline{
         ]
      )
       }
+    }
+    stage('deploy dev-server'){
+        steps{
+            sh 'cp taxi-booking/target/taxi-booking-1.0.1.war /var/lib/tomcat9/webapps'
+        }
     }
     }
     }
