@@ -22,15 +22,18 @@ pipeline{
                 sh 'mvn clean install -DskipTests=true'
             }
         }
-     stage('Sonarqube') {
-            steps {
-                withSonarQubeEnv('sonar'){
-                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=taxi-webapp \
-                   -Dsonar.java.binaries=. \
-                   -Dsonar.projectKey=devops-test1234_taxi-webapp '''
-               }
+    stage('SonarQube analysis') {
+            environment {
+            scannerHome = tool 'sonar'
             }
-        }
+        steps { 
+            echo '------------------- Sonar Started -------------'
+        withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
+            sh "${scannerHome}/bin/sonar-scanner"
+    }
+    echo '------------------- Sonar Analysis Completed -------------'
+  }
+    }
     stage("Quality Gate") {
             steps {
               timeout(time: 1, unit: 'HOURS') {
