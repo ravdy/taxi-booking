@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    tools{
+        maven 'maven'
+    }
+    stages{
+        stage('checkout-code'){
+            steps{
+              git branch: 'dev', url: 'https://github.com/bharah08/taxi-booking.git'  
+            }
+        }
+        stage('unit-test'){
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage('build-package'){
+            steps{
+                sh 'mvn clean install -DskipTests=true'
+            }
+        }
+    }
+}
