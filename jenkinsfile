@@ -41,7 +41,7 @@ pipeline{
           }
           stage('Deploy') {
       steps {
-        script{}
+        script{
         nexusArtifactUploader(
           nexusVersion: 'nexus3',
           protocol: 'http',
@@ -60,4 +60,4 @@ pipeline{
       }
     }
     }
-}
+    }
