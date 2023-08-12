@@ -11,8 +11,10 @@ git 'https://github.com/bharah08/taxi-booking.git'
         }
         stage('deploy on k8s'){
             steps{
+                script{
                 kubeconfig(credentialsId: 'k8s', serverUrl: '') {
     sh 'kubectl apply -f deploy.yaml'
+                }
 }
             }
         }
