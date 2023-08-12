@@ -3,81 +3,18 @@ pipeline{
     tools{
         maven 'maven'
     }
-     parameters {
-        booleanParam(name: 'skip_test', defaultValue: false, description: 'Set to true to skip the test stage')
-    }
-      environment{
-        SCANNER_HOME= tool 'sonar'
-    }
     stages{
-        stage('checkout-code'){
+        stage('git-checkout'){
             steps{
-              git 'https://github.com/bharah08/taxi-booking.git'
+git 'https://github.com/bharah08/taxi-booking.git'
             }
         }
-        stage('unit-test'){
+        stage('deploy on k8s'){
             steps{
-                sh 'mvn test'
-            }
-        }
-        stage('build-package'){
-            steps{
-                sh 'mvn clean install -DskipTests=true'
-            }
-        }
-    stage('SonarQube analysis') {
-            environment {
-            scannerHome = tool 'sonar'
-            }
-        steps { 
-        withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
-            sh "${scannerHome}/bin/sonar-scanner"
-    }
-  }
-    }
-    stage("Quality Gate") {
-            steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
-          }
-          stage('Deploy') {
-            when { expression { params.skip_test != false } }
-      steps {
-           nexusArtifactUploader(
-        nexusVersion: 'nexus3',
-        protocol: 'http',
-        nexusUrl: '43.204.144.20:8081',
-        groupId: 'com.example.maven-project',
-        version: '1.0-SNAPSHOT',
-        repository: 'taxi-webapp',
-        credentialsId: 'nexus',
-        artifacts: [
-            [artifactId: 'maven-project',
-             classifier: '',
-             file: 'taxi-booking/target/taxi-booking-1.0.1.war',
-             type: 'war']
-        ]
-     )
-      }
-    }
-    stage('build docker image'){
-        steps{
-            sh 'docker build -t bharath0812/tomcat:2.0 .'
-        }
-    }
-    stage('docker image scan with trivy'){
-        steps{
-            sh 'trivy image bharath0812/tomcat:2.0'
-        }
-    }
-    stage('docker image push to dockerhub'){
-        steps{
-            withDockerRegistry(credentialsId: 'docker-hub') {
-    sh 'docker push bharath0812/tomcat:2.0'
+                kubeconfig(credentialsId: 'k8s', serverUrl: '') {
+    sh 'kubectl apply -f deploy.yaml'
 }
+            }
         }
     }
-    }
-    }
+}
