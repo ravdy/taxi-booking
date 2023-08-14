@@ -3,20 +3,18 @@ pipeline{
     tools{
         maven 'maven'
     }
-    stages{
-        stage('git-checkout'){
+    staages{
+        stage('gi-checkout'){
             steps{
-git 'https://github.com/bharah08/taxi-booking.git'
+                git 'https://github.com/bharah08/taxi-booking.git'
             }
         }
-        stage('deploy on k8s'){
+        stage('deploy-k8s'){
             steps{
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                    sh 'chmod 600 config'
+                kubeconfig(credentialsId: 'k8s', serverUrl: '') {
     sh 'kubectl apply -f deploy.yaml'
-    
-                }
 }
             }
         }
     }
+}
