@@ -11,8 +11,10 @@ pipeline{
         }
         stage('deploy-k8s'){
             steps{
+                script{
                 kubeconfig(credentialsId: 'k8s', serverUrl: '') {
     sh 'kubectl apply -f deploy.yaml'
+                }
 }
             }
         }
