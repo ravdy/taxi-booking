@@ -9,14 +9,14 @@ pipeline{
                 git 'https://github.com/bharah08/taxi-booking.git'
             }
         }
-        stage('deploy-k8s'){
-            steps{
-                script{
-                kubeconfig(credentialsId: 'k8s', serverUrl: '') {
+    stage('deploy'){
+        steps{
+            script{
+            withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', serverUrl: '']]) {
     sh 'kubectl apply -f deploy.yaml'
-                }
 }
-            }
         }
+        }
+    }
     }
 }
