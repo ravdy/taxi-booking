@@ -3,7 +3,7 @@ pipeline{
     tools{
         maven 'maven'
     }
-    staages{
+    stages{
         stage('gi-checkout'){
             steps{
                 git 'https://github.com/bharah08/taxi-booking.git'
