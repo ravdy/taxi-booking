@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: bharath0812/tomcat:2.0
+        image: bharath0812/tomcat:3.0
         ports:
         - containerPort: 8080
