@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    tools{
+        maven 'maven'
+    }
+    stages{
+        stage('gi-checkout'){
+            steps{
+                git 'https://github.com/bharah08/taxi-booking.git'
+            }
+        }
+    stage('deploy k8s') {
+            steps {
+               kubernetesDeploy (configs: 'kustomize.yaml', kubeconfigId: 'kube')
+            }
+        }
+          
+    }
+}
